@@ -11,10 +11,13 @@
   "dependencies": {
     "firebase": "^9.7.0",
     "firebase-admin": "^10.1.0",
+    "formik": "^2.2.9",
     "next": "12.1.5",
+    "next-themes": "^0.1.1",
     "nookies": "^2.5.2",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-dom": "18.1.0",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.5",

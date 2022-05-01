@@ -1,11 +1,18 @@
 import "../styles/globals.css";
 import { AuthProvider } from "../firebase/auth";
+import Navbar from "../components/Navbar/navbar";
+import { ThemeProvider } from "next-themes";
+import Footer from "../components/Footer/footer";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <AuthProvider>
-      <Component {...pageProps} />;
-    </AuthProvider>
+    <ThemeProvider>
+      <AuthProvider>
+        <Navbar />
+        <Component {...pageProps} />;
+        <Footer/>
+      </AuthProvider>
+    </ThemeProvider>
   );
 }
 

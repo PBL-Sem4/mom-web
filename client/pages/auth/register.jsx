@@ -1,15 +1,10 @@
 import React, { useState } from "react";
-import Link from "next/link";
-import firebaseClient from "../../firebase/firebaseClient";
-import firebase from "firebase/app";
-import "firebase/auth";
 import { Formik, Form, Field } from "formik";
 import { TextField } from "./TextField";
 import * as Yup from "yup";
 import { Validators } from "../../utils/index";
 
-const Login = () => {
-  firebaseClient();
+const Register = () => {
   const validate = Yup.object({
     email: Validators.email,
     password: Validators.password,
@@ -41,10 +36,13 @@ const Login = () => {
                 <Form className="form" onSubmit={formik.handleSubmit}>
                   <div class="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
                     <p class="text-center font-semibold text-2xl mx-4 mb-0">
-                      Sign In
+                      Sign Up
                     </p>
                   </div>
 
+                  <div class="mb-6">
+                    <TextField placeholder="Name" name="name" type="name" />
+                  </div>
                   <div class="mb-6">
                     <TextField placeholder="Email" name="email" type="email" />
                   </div>
@@ -88,12 +86,12 @@ const Login = () => {
                       Reset
                     </button>
                     <p class="text-sm font-semibold mt-2 pt-1 mb-0">
-                      Don't have an account?
+                      Have an account?
                       <a
-                        href="/auth/register"
+                        href="/auth/login"
                         class="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
                       >
-                        Register
+                        Login
                       </a>
                     </p>
                   </div>
@@ -107,4 +105,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

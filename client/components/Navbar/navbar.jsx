@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useState, useEffect, ReactNode } from "react";
+import React, { useState } from "react";
 import Theme from "../Theme/theme";
 
 const Links = [
@@ -23,7 +23,6 @@ const Links = [
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
-  useEffect(() => setNavbarOpen(false),[]);
 
   return (
     <div>

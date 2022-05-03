@@ -18,7 +18,7 @@ const SignUp = () => {
       createUserWithEmailAndPassword(email, passwordOne)
         .then((authUser) => {
           console.log("Success. The user is created in firebase");
-          router.push("/logged_in");
+          router.push("/dashboard/meetings");
         })
         .catch((error) => {
           setError(error.message);
@@ -42,7 +42,11 @@ const SignUp = () => {
           >
             {error && <div>{error}</div>}
             <div>
-              <label for="signUpEmail" sm={4}>
+              <label
+                for="signUpEmail"
+                className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                sm={4}
+              >
                 Email
               </label>
               <div className="mb-6">
@@ -58,8 +62,11 @@ const SignUp = () => {
               </div>
             </div>
             <div>
-              <label for="signUpPassword" sm={4}>
-              Password
+              <label
+                for="signUpPassword"
+                className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              >
+                Password
               </label>
               <div className="mb-6">
                 <input
@@ -74,7 +81,10 @@ const SignUp = () => {
               </div>
             </div>
             <div>
-              <label for="signUpPassword2" sm={4}>
+              <label
+                for="signUpPassword2"
+                className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              >
                 Confirm Password
               </label>
               <div className="mb-6">
@@ -91,7 +101,7 @@ const SignUp = () => {
             </div>
             <div className="text-center lg:text-left flex justify-center pt-3">
               <button
-                className=" bg-gray-800 hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 text-white dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-800 dark:border-gray-700"
+                className="shadow bg-indigo-600 hover:bg-indigo-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded"
                 type="submit"
               >
                 Sign Up

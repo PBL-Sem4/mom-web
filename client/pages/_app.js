@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
     <ThemeProvider>
       <AuthUserProvider>
         <Navbar />
-        <Component {...pageProps} />;
+        <Component {...pageProps} />
         <Footer />
       </AuthUserProvider>
     </ThemeProvider>

@@ -1,6 +1,7 @@
 import Link from "next/link";
-import React, { useState } from "react";
-import Theme from "../Theme/theme";
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import { useAuth } from "../../context/AuthUserContext";
 
 const Links = [
   {
@@ -9,20 +10,26 @@ const Links = [
   },
   {
     name: "About",
-    path: "/aboutme",
+    path: "/about/about",
   },
   {
     name: "Login",
     path: "/auth/signin/",
   },
   {
-    name: "Contact",
-    path: "/contact",
+    name: "Team",
+    path: "/team",
   },
 ];
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const { authUser, loading, signOut } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!loading && !authUser) router.push("/");
+  }, [authUser, loading]);
 
   return (
     <div>
@@ -63,19 +70,32 @@ const Navbar = () => {
           >
             <ul className="list-none lg:ml-auto">
               <li className="flex flex-col lg:flex-row">
-                {Links.map(({ name, path }) => (
-                  <Link key={path} href={path}>
-                    <a
-                      onClick={() => setNavbarOpen(!navbarOpen)}
-                      className="px-4"
+                {!authUser ? (
+                  <div>
+                    {Links.map(({ name, path }) => (
+                      <Link key={path} href={path}>
+                        <a
+                          onClick={() => setNavbarOpen(!navbarOpen)}
+                          className="px-4 py-3 hover:text-blue-500"
+                        >
+                          {name}
+                        </a>
+                      </Link>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="pt-3">
+                    <button
+                      type="button"
+                      onClick={signOut}
+                      className="inline-block px-6 py-2.5 bg-gray-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-800 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
                     >
-                      {name}
-                    </a>
-                  </Link>
-                ))}
+                      Sign Out
+                    </button>
+                  </div>
+                )}
               </li>
             </ul>
-            <Theme />
           </div>
         </div>
       </nav>

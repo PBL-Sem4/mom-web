@@ -29,12 +29,10 @@ const LandingPage = (props) => {
                 </h1>
                 <p className="mt-4 text-lg text-gray-300">
                   Minutes of Meeting Generator
-                  <div className="py-8">
-                    {/* {`User ID: ${user ? user.uid : "no user signed in"}`} */}
-                  </div>
+                  <div className="py-8"></div>
                   <button
-                    type="button"
-                    className="inline-block px-6 py-2.5 bg-gray-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-800 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                    className="shadow bg-indigo-600 hover:bg-indigo-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded"
+                    type="submit"
                   >
                     <Link href="/auth/signin">Login</Link>
                   </button>

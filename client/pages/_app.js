@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import { AuthProvider } from "../firebase/auth";
+import { AuthUserProvider } from '../context/AuthUserContext';
 import Navbar from "../components/Navbar/navbar";
 import { ThemeProvider } from "next-themes";
 import Footer from "../components/Footer/footer";
@@ -7,11 +7,11 @@ import Footer from "../components/Footer/footer";
 function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider>
-      <AuthProvider>
+      <AuthUserProvider>
         <Navbar />
         <Component {...pageProps} />;
-        <Footer/>
-      </AuthProvider>
+        <Footer />
+      </AuthUserProvider>
     </ThemeProvider>
   );
 }

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useState, ReactNode } from "react";
+import React, { useState, useEffect, ReactNode } from "react";
 import Theme from "../Theme/theme";
 
 const Links = [
@@ -13,7 +13,7 @@ const Links = [
   },
   {
     name: "Login",
-    path: "/auth/login/",
+    path: "/auth/signin/",
   },
   {
     name: "Contact",
@@ -23,6 +23,7 @@ const Links = [
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
+  useEffect(() => setNavbarOpen(false),[]);
 
   return (
     <div>

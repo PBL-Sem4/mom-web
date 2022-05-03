@@ -1,9 +1,8 @@
+import Link from "next/link";
 import React from "react";
-import { useAuth } from "../../firebase/auth";
 
 import About from "../about/about";
 const LandingPage = (props) => {
-  const { user } = useAuth();
   const styling = {
     backgroundImage: `url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1267&amp;q=80')`,
     width: "100%",
@@ -18,7 +17,7 @@ const LandingPage = (props) => {
         >
           <span
             id="blackOverlay"
-            className="w-full h-full absolute bg-black opacity-60"
+            className="w-full h-full absolute bg-black opacity-90"
           ></span>
         </div>
         <div className="container relative mx-auto">
@@ -26,19 +25,18 @@ const LandingPage = (props) => {
             <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
               <div className="pr-12">
                 <h1 className="text-white font-semibold text-5xl pt-12">
-                  Welcome, <br />
-                  Your story starts with us.
+                  Welcome
                 </h1>
                 <p className="mt-4 text-lg text-gray-300">
                   Minutes of Meeting Generator
-                  <div className="py-8" textAlign="center">
-                    {`User ID: ${user ? user.uid : "no user signed in"}`}
+                  <div className="py-8">
+                    {/* {`User ID: ${user ? user.uid : "no user signed in"}`} */}
                   </div>
                   <button
                     type="button"
-                    class="inline-block px-6 py-2.5 bg-gray-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-800 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                    className="inline-block px-6 py-2.5 bg-gray-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-800 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
                   >
-                    Login
+                    <Link href="./auth/login">Login</Link>
                   </button>
                 </p>
               </div>

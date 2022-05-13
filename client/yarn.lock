@@ -415,6 +415,21 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
+"@speechly/browser-client@1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@speechly/browser-client/-/browser-client-1.5.0.tgz#42de041d041e2ad57666c4fec69ca984a5d36a0e"
+  integrity sha512-sAhLuwV1YMoMoe3mY8WgT3C4+89FimBj0oAPMAtxl7PdWWWAAvWRqB1n9MzTaDzGN3mvu9tSkqrS+DHWU4jw4A==
+  dependencies:
+    base-64 "^0.1.0"
+    uuid "^8.0.0"
+
+"@speechly/react-client@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@speechly/react-client/-/react-client-2.0.1.tgz#5efeb1de967ea79df39b88e9ce9399451fbdeb6f"
+  integrity sha512-bAA8oDvesGn8wLWy2sdsiLbs6ijisii6tTCWaIgHi2rpXrW6n/QtNBCj5pVV2i+tM17NgoPkcqarmMVn+EilGw==
+  dependencies:
+    "@speechly/browser-client" "1.5.0"
+
 "@types/long@^4.0.1":
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/@types/long/-/long-4.0.2.tgz#b74129719fc8d11c01868010082d483b7545591a"
@@ -480,6 +495,11 @@ autoprefixer@^10.4.7:
     normalize-range "^0.1.2"
     picocolors "^1.0.0"
     postcss-value-parser "^4.2.0"
+
+base-64@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/base-64/-/base-64-0.1.0.tgz#780a99c84e7d600260361511c4877613bf24f6bb"
+  integrity sha1-eAqZyE59YAJgNhURxId2E78k9rs=
 
 binary-extensions@^2.0.0:
   version "2.2.0"
@@ -1108,6 +1128,11 @@ util-deprecate@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
+
+uuid@^8.0.0:
+  version "8.3.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
+  integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
 
 webidl-conversions@^3.0.0:
   version "3.0.1"

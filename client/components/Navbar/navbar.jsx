@@ -84,7 +84,17 @@ const Navbar = () => {
                     ))}
                   </div>
                 ) : (
-                  <div className="pt-3">
+                  <div className="flex flex-col lg:flex-row">
+                    <div className="px-4 py-3 hover:text-blue-500">
+                      <Link href="/dashboard/">
+                        <a
+                          onClick={() => setNavbarOpen(!navbarOpen)}
+                          className="px-4 py-3 hover:text-blue-500"
+                        >
+                          Dashboard
+                        </a>
+                      </Link>
+                    </div>
                     <button
                       type="button"
                       onClick={signOut}

@@ -11,7 +11,7 @@ const Footer = () => {
               <div className="text-sm text-gray-600 font-semibold py-4">
                 Copyright © 2022
                 <a
-                  href="https://www.creative-tim.com"
+                  href="/team"
                   className="text-gray-600 hover:text-gray-900"
                 >
                   PBL Project
